@@ -23,3 +23,14 @@ RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw"
+PROCESSED_DATA_DIR = PROJECT_ROOT / "data" / "processed"
+
+LATEST_ANNUAL_PERIODS = 5
+
+REVENUE_CONCEPTS = (
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet",
+)
+NET_INCOME_CONCEPTS = ("NetIncomeLoss",)
+OPERATING_CASH_FLOW_CONCEPTS = ("NetCashProvidedByUsedInOperatingActivities",)

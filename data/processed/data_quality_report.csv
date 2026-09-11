@@ -1,0 +1,62 @@
+ticker,fiscal_year,check_name,status,details
+AAPL,,implausible_annual_duration,WARN,16 10-K USD facts for RevenueFromContractWithCustomerExcludingAssessedTax were excluded because their durations were outside 300-430 days or missing.
+AAPL,,implausible_annual_duration,WARN,8 10-K USD facts for Revenues were excluded because their durations were outside 300-430 days or missing.
+AAPL,,implausible_annual_duration,WARN,64 10-K USD facts for SalesRevenueNet were excluded because their durations were outside 300-430 days or missing.
+AAPL,2008,conflicting_duplicate_annual_facts,WARN,SalesRevenueNet has 2 distinct values for 2007-09-30 to 2008-09-27; selected latest filed.
+AAPL,2009,conflicting_duplicate_annual_facts,WARN,SalesRevenueNet has 2 distinct values for 2008-09-28 to 2009-09-26; selected latest filed.
+AAPL,,implausible_annual_duration,WARN,88 10-K USD facts for NetIncomeLoss were excluded because their durations were outside 300-430 days or missing.
+AAPL,2008,conflicting_duplicate_annual_facts,WARN,NetIncomeLoss has 2 distinct values for 2007-09-30 to 2008-09-27; selected latest filed.
+AAPL,2009,conflicting_duplicate_annual_facts,WARN,NetIncomeLoss has 2 distinct values for 2008-09-28 to 2009-09-26; selected latest filed.
+AAPL,2016,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2015-09-27 to 2016-09-24; selected latest filed.
+AAPL,2017,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2016-09-25 to 2017-09-30; selected latest filed.
+MSFT,,implausible_annual_duration,WARN,24 10-K USD facts for RevenueFromContractWithCustomerExcludingAssessedTax were excluded because their durations were outside 300-430 days or missing.
+MSFT,,implausible_annual_duration,WARN,12 10-K USD facts for Revenues were excluded because their durations were outside 300-430 days or missing.
+MSFT,,implausible_annual_duration,WARN,56 10-K USD facts for SalesRevenueNet were excluded because their durations were outside 300-430 days or missing.
+MSFT,,implausible_annual_duration,WARN,92 10-K USD facts for NetIncomeLoss were excluded because their durations were outside 300-430 days or missing.
+MSFT,2016,conflicting_duplicate_annual_facts,WARN,NetIncomeLoss has 2 distinct values for 2015-07-01 to 2016-06-30; selected latest filed.
+MSFT,2017,conflicting_duplicate_annual_facts,WARN,NetIncomeLoss has 2 distinct values for 2016-07-01 to 2017-06-30; selected latest filed.
+NVDA,,implausible_annual_duration,WARN,16 10-K USD facts for RevenueFromContractWithCustomerExcludingAssessedTax were excluded because their durations were outside 300-430 days or missing.
+NVDA,,implausible_annual_duration,WARN,64 10-K USD facts for Revenues were excluded because their durations were outside 300-430 days or missing.
+NVDA,2014,conflicting_duplicate_annual_facts,WARN,Revenues has 2 distinct values for 2013-01-28 to 2014-01-26; selected latest filed.
+NVDA,2015,conflicting_duplicate_annual_facts,WARN,Revenues has 2 distinct values for 2014-01-27 to 2015-01-25; selected latest filed.
+NVDA,,implausible_annual_duration,WARN,81 10-K USD facts for NetIncomeLoss were excluded because their durations were outside 300-430 days or missing.
+NVDA,2014,conflicting_duplicate_annual_facts,WARN,NetIncomeLoss has 2 distinct values for 2013-01-28 to 2014-01-26; selected latest filed.
+NVDA,2015,conflicting_duplicate_annual_facts,WARN,NetIncomeLoss has 2 distinct values for 2014-01-27 to 2015-01-25; selected latest filed.
+NVDA,,implausible_annual_duration,WARN,3 10-K USD facts for NetCashProvidedByUsedInOperatingActivities were excluded because their durations were outside 300-430 days or missing.
+NVDA,2014,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2013-01-28 to 2014-01-26; selected latest filed.
+NVDA,2015,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2014-01-27 to 2015-01-25; selected latest filed.
+AMZN,,implausible_annual_duration,WARN,24 10-K USD facts for RevenueFromContractWithCustomerExcludingAssessedTax were excluded because their durations were outside 300-430 days or missing.
+AMZN,,implausible_annual_duration,WARN,64 10-K USD facts for SalesRevenueNet were excluded because their durations were outside 300-430 days or missing.
+AMZN,,implausible_annual_duration,WARN,88 10-K USD facts for NetIncomeLoss were excluded because their durations were outside 300-430 days or missing.
+AMZN,2015,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2015-01-01 to 2015-12-31; selected latest filed.
+AMZN,2016,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 3 distinct values for 2016-01-01 to 2016-12-31; selected latest filed.
+AMZN,2017,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2017-01-01 to 2017-12-31; selected latest filed.
+META,,implausible_annual_duration,WARN,3 10-K USD facts for NetIncomeLoss were excluded because their durations were outside 300-430 days or missing.
+META,,implausible_annual_duration,WARN,3 10-K USD facts for NetCashProvidedByUsedInOperatingActivities were excluded because their durations were outside 300-430 days or missing.
+META,2014,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2014-01-01 to 2014-12-31; selected latest filed.
+META,2015,conflicting_duplicate_annual_facts,WARN,NetCashProvidedByUsedInOperatingActivities has 2 distinct values for 2015-01-01 to 2015-12-31; selected latest filed.
+AAPL,2021,row_quality_status,PASS,No material issues.
+AAPL,2022,row_quality_status,PASS,No material issues.
+AAPL,2023,row_quality_status,PASS,No material issues.
+AAPL,2024,row_quality_status,PASS,No material issues.
+AAPL,2025,row_quality_status,PASS,No material issues.
+MSFT,2022,row_quality_status,PASS,No material issues.
+MSFT,2023,row_quality_status,PASS,No material issues.
+MSFT,2024,row_quality_status,PASS,No material issues.
+MSFT,2025,row_quality_status,PASS,No material issues.
+MSFT,2026,row_quality_status,PASS,No material issues.
+NVDA,2022,row_quality_status,PASS,No material issues.
+NVDA,2023,row_quality_status,PASS,No material issues.
+NVDA,2024,row_quality_status,PASS,No material issues.
+NVDA,2025,row_quality_status,PASS,No material issues.
+NVDA,2026,row_quality_status,PASS,No material issues.
+AMZN,2021,row_quality_status,PASS,No material issues.
+AMZN,2022,row_quality_status,PASS,No material issues.
+AMZN,2023,row_quality_status,PASS,No material issues.
+AMZN,2024,row_quality_status,PASS,No material issues.
+AMZN,2025,row_quality_status,PASS,No material issues.
+META,2021,row_quality_status,PASS,No material issues.
+META,2022,row_quality_status,PASS,No material issues.
+META,2023,row_quality_status,PASS,No material issues.
+META,2024,row_quality_status,PASS,No material issues.
+META,2025,row_quality_status,PASS,No material issues.
