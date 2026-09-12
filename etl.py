@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from datetime import datetime, timezone
 from typing import Any
 
@@ -59,6 +60,12 @@ QUALITY_REPORT_FIELDS = [
     "status",
     "details",
 ]
+
+LOGGER = logging.getLogger(__name__)
+
+
+def configure_logging() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 
 def utc_now_iso() -> str:
@@ -170,24 +177,24 @@ def extract() -> list[dict[str, Any]]:
     return metadata
 
 
-def print_summary(metadata: list[dict[str, Any]]) -> None:
+def log_summary(metadata: list[dict[str, Any]]) -> None:
     company_records = [
         record for record in metadata if record["ticker"] != "COMPANY_TICKERS"
     ]
     successes = [record for record in company_records if record["status"] == "SUCCESS"]
     failures = [record for record in company_records if record["status"] != "SUCCESS"]
 
-    print("Extraction complete.")
-    print(f"Ticker mapping: {metadata[0]['status']}")
-    print(f"Companyfacts successes: {len(successes)}")
-    print(f"Companyfacts failures: {len(failures)}")
+    LOGGER.info("Extraction complete.")
+    LOGGER.info("Ticker mapping: %s", metadata[0]["status"])
+    LOGGER.info("Companyfacts successes: %s", len(successes))
+    LOGGER.info("Companyfacts failures: %s", len(failures))
 
     if successes:
-        print("Succeeded:", ", ".join(record["ticker"] for record in successes))
+        LOGGER.info("Succeeded: %s", ", ".join(record["ticker"] for record in successes))
     if failures:
-        print("Failed:")
+        LOGGER.info("Failed:")
         for record in failures:
-            print(f"- {record['ticker']}: {record['error_message']}")
+            LOGGER.info("- %s: %s", record["ticker"], record["error_message"])
 
 
 def successful_company_tickers(metadata: list[dict[str, Any]]) -> tuple[str, ...]:
@@ -218,7 +225,7 @@ def save_processed_outputs(
     }
 
 
-def print_etl_summary(
+def log_etl_summary(
     metadata: list[dict[str, Any]],
     rows: list[dict[str, Any]],
     output_paths: dict[str, str],
@@ -231,20 +238,20 @@ def print_etl_summary(
     companies = sorted({row["ticker"] for row in rows})
     quality_counts = quality_status_counts(rows)
 
-    print("ETL complete.")
-    print(f"Extraction successes: {len(successes)}")
-    print(f"Extraction failures: {len(failures)}")
-    print(f"Processed rows: {len(rows)}")
-    print(f"Companies represented: {', '.join(companies) if companies else 'None'}")
-    print(
+    LOGGER.info("ETL complete.")
+    LOGGER.info("Extraction successes: %s", len(successes))
+    LOGGER.info("Extraction failures: %s", len(failures))
+    LOGGER.info("Processed rows: %s", len(rows))
+    LOGGER.info("Companies represented: %s", ", ".join(companies) if companies else "None")
+    LOGGER.info(
         "Quality counts: "
         f"PASS={quality_counts['PASS']}, "
         f"WARN={quality_counts['WARN']}, "
         f"FAIL={quality_counts['FAIL']}"
     )
-    print("Outputs:")
+    LOGGER.info("Outputs:")
     for name, path in output_paths.items():
-        print(f"- {name}: {path}")
+        LOGGER.info("- %s: %s", name, path)
 
 
 def main() -> None:
@@ -258,8 +265,9 @@ def main() -> None:
         company_summary,
         quality_report,
     )
-    print_etl_summary(metadata, validated_rows, output_paths)
+    log_etl_summary(metadata, validated_rows, output_paths)
 
 
 if __name__ == "__main__":
+    configure_logging()
     main()
