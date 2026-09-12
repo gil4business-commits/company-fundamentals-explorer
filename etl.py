@@ -190,6 +190,14 @@ def print_summary(metadata: list[dict[str, Any]]) -> None:
             print(f"- {record['ticker']}: {record['error_message']}")
 
 
+def successful_company_tickers(metadata: list[dict[str, Any]]) -> tuple[str, ...]:
+    return tuple(
+        record["ticker"]
+        for record in metadata
+        if record["ticker"] != "COMPANY_TICKERS" and record["status"] == "SUCCESS"
+    )
+
+
 def save_processed_outputs(
     rows: list[dict[str, Any]],
     company_summary: list[dict[str, Any]],
@@ -241,7 +249,8 @@ def print_etl_summary(
 
 def main() -> None:
     metadata = extract()
-    rows, selection_events = transform_raw_files()
+    eligible_tickers = successful_company_tickers(metadata)
+    rows, selection_events = transform_raw_files(tickers=eligible_tickers)
     validated_rows, quality_report = validate_fundamentals(rows, selection_events)
     company_summary = build_company_summary(validated_rows)
     output_paths = save_processed_outputs(

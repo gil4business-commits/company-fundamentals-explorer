@@ -50,37 +50,40 @@ Repository Structure
 
 ```text
 .
-├── app.py
-├── etl.py
-├── requirements.txt
-├── README.md
-├── dashboard_screenshot.png
-├── ai_transcript/
-│   └── README.md
-├── data/
-│   ├── raw/
-│   │   ├── company_tickers.json
-│   │   ├── AAPL_companyfacts.json
-│   │   ├── MSFT_companyfacts.json
-│   │   ├── NVDA_companyfacts.json
-│   │   ├── AMZN_companyfacts.json
-│   │   ├── META_companyfacts.json
-│   │   └── extraction_metadata.json
-│   └── processed/
-│       ├── company_fundamentals.csv
-│       ├── company_summary.csv
-│       └── data_quality_report.csv
-├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── quality.py
-│   ├── sec_client.py
-│   ├── storage.py
-│   └── transform.py
-└── tests/
-    ├── conftest.py
-    ├── test_quality.py
-    └── test_transform.py
+|-- app.py
+|-- etl.py
+|-- requirements.txt
+|-- README.md
+|-- dashboard_screenshot.png
+|-- ai_transcript/
+|   |-- README.md
+|   |-- chatgpt_assignment_transcript.md
+|   `-- coding_agent_session.md
+|-- data/
+|   |-- raw/
+|   |   |-- company_tickers.json
+|   |   |-- AAPL_companyfacts.json
+|   |   |-- MSFT_companyfacts.json
+|   |   |-- NVDA_companyfacts.json
+|   |   |-- AMZN_companyfacts.json
+|   |   |-- META_companyfacts.json
+|   |   `-- extraction_metadata.json
+|   `-- processed/
+|       |-- company_fundamentals.csv
+|       |-- company_summary.csv
+|       `-- data_quality_report.csv
+|-- src/
+|   |-- __init__.py
+|   |-- config.py
+|   |-- quality.py
+|   |-- sec_client.py
+|   |-- storage.py
+|   `-- transform.py
+`-- tests/
+    |-- conftest.py
+    |-- test_etl.py
+    |-- test_quality.py
+    `-- test_transform.py
 ```
 
 SEC EDGAR Data Source
@@ -99,8 +102,8 @@ Local Run Instructions
 ----------------------
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/gil4business-commits/company-fundamentals-explorer.git
+cd company-fundamentals-explorer
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
@@ -117,7 +120,7 @@ Running `python etl.py` performs:
 ```text
 extract
 -> persist raw SEC JSON
--> transform annual facts
+-> transform annual facts for companies successfully extracted in the current run
 -> validate rows and diagnostics
 -> save processed analytical CSVs
 ```
@@ -125,7 +128,7 @@ extract
 Raw outputs are written to `data/raw/`:
 
 - `company_tickers.json`
-- one `*_companyfacts.json` file per configured ticker
+- one `*_companyfacts.json` file per successfully fetched configured ticker
 - `extraction_metadata.json`
 
 Processed outputs are written to `data/processed/`:
@@ -133,6 +136,8 @@ Processed outputs are written to `data/processed/`:
 - `company_fundamentals.csv`: one row per company and selected fiscal year
 - `company_summary.csv`: one row per company with latest reported annual results
 - `data_quality_report.csv`: row-level quality status plus diagnostic checks
+
+The ETL uses current extraction metadata to decide which tickers are eligible for transformation. If a company fails during the current extraction run, an older local raw file for that ticker is not transformed as if it were fresh data. Successful companies continue processing.
 
 The main analytical fields include:
 
@@ -265,6 +270,7 @@ Coverage focuses on:
 - net margin calculation
 - duplicate company/year validation
 - quality status behavior for missing metrics
+- ensuring a failed current extraction is not silently transformed from a stale local raw file
 
 Assumptions
 -----------
@@ -292,6 +298,11 @@ AI Usage
 
 AI assistance was used to help plan, implement, test, and polish this take-home project. AI was used for code generation, debugging, documentation drafting, and iterative product refinement.
 
+The repository includes AI interaction records for:
+
+- assignment planning and product-design interaction
+- coding-agent implementation interaction
+
 The implementation decisions were kept within the assignment constraints:
 
 - no private credentials
@@ -301,7 +312,7 @@ The implementation decisions were kept within the assignment constraints:
 - no LLM calls inside the application
 - no investment advice language
 
-The `ai_transcript/` directory documents the transcript status for submission.
+The `ai_transcript/` directory contains the assignment interaction records for submission.
 
 What I Would Improve With More Time
 -----------------------------------

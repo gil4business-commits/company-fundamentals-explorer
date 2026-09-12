@@ -10,10 +10,7 @@ COMPANY_FACTS_URL_TEMPLATE = (
     f"{SEC_DATA_BASE_URL}/api/xbrl/companyfacts/CIK{{cik}}.json"
 )
 
-SEC_USER_AGENT = (
-    "PublicCompanyFundamentalsExplorer/0.1 "
-    "(AI data engineering take-home; contact: example@example.com)"
-)
+SEC_USER_AGENT = "PublicCompanyFundamentalsExplorer/1.0 gil4business@gmail.com"
 
 REQUEST_TIMEOUT_SECONDS = 20
 REQUEST_PAUSE_SECONDS = 0.25

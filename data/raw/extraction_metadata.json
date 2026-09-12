@@ -3,7 +3,7 @@
     "ticker": "COMPANY_TICKERS",
     "cik": null,
     "source_url": "https://www.sec.gov/files/company_tickers.json",
-    "fetched_at_utc": "2026-09-12T00:00:11.614476+00:00",
+    "fetched_at_utc": "2026-09-12T09:24:42.132100+00:00",
     "status": "SUCCESS",
     "error_message": null
   },
@@ -11,7 +11,7 @@
     "ticker": "AAPL",
     "cik": "0000320193",
     "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
-    "fetched_at_utc": "2026-09-12T00:00:13.423636+00:00",
+    "fetched_at_utc": "2026-09-12T09:24:51.952315+00:00",
     "status": "SUCCESS",
     "error_message": null
   },
@@ -19,7 +19,7 @@
     "ticker": "MSFT",
     "cik": "0000789019",
     "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
-    "fetched_at_utc": "2026-09-12T00:00:15.725205+00:00",
+    "fetched_at_utc": "2026-09-12T09:24:54.255056+00:00",
     "status": "SUCCESS",
     "error_message": null
   },
@@ -27,7 +27,7 @@
     "ticker": "NVDA",
     "cik": "0001045810",
     "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
-    "fetched_at_utc": "2026-09-12T00:00:17.106591+00:00",
+    "fetched_at_utc": "2026-09-12T09:24:55.924557+00:00",
     "status": "SUCCESS",
     "error_message": null
   },
@@ -35,7 +35,7 @@
     "ticker": "AMZN",
     "cik": "0001018724",
     "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
-    "fetched_at_utc": "2026-09-12T00:00:19.101721+00:00",
+    "fetched_at_utc": "2026-09-12T09:24:57.663184+00:00",
     "status": "SUCCESS",
     "error_message": null
   },
@@ -43,7 +43,7 @@
     "ticker": "META",
     "cik": "0001326801",
     "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json",
-    "fetched_at_utc": "2026-09-12T00:00:20.702354+00:00",
+    "fetched_at_utc": "2026-09-12T09:24:59.024111+00:00",
     "status": "SUCCESS",
     "error_message": null
   }
